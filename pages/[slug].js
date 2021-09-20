@@ -27,7 +27,6 @@ export default class Profile extends React.Component {
     async componentDidMount() {
         try {
             const response = await fetch(`${ADMIN_BUSINESS_CARD}/profiles`);
-            console.log(response);
             if (response.status < 400) {
                 const json = await response.json();
                 const profile = (json || []).find(item => this.props.slug === slugify(item.name));
@@ -42,7 +41,7 @@ export default class Profile extends React.Component {
     }
     render() {
         return (
-            <Layout title={this.props.slug} description={''}>
+            <Layout title={this.state.profile ? this.state.profile.name : ''} description={this.state.profile ? this.state.profile.role : ''}>
                 {this.state.profile ? <div className={styles.wrapper}>
                     <div className={styles.card}>
                         <div className={styles.cardUp}>
