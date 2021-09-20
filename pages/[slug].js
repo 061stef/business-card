@@ -25,7 +25,6 @@ export default class Profile extends React.Component {
     }
 
     async componentDidMount() {
-        console.log(this.props.slug);
         try {
             const response = await fetch(`${ADMIN_BUSINESS_CARD}/profiles`);
             console.log(response);
