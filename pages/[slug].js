@@ -72,7 +72,7 @@ export default class Profile extends React.Component {
                             </div>
                         </div>
                         <div className={styles.cardDown}>
-                            <h2 className={styles.name} style={{ color: '#fff' }}>Next ADV</h2>
+                            <h2 className={styles.name} style={{ color: '#fff' }}>Next <span style={{color: '#E7405C'}}>A</span><span style={{color: '#f39939'}}>D</span><span style={{color: '#52c1ed'}}>V</span></h2>
                             <div className={styles.listSociety}>
                                 <a href={'tel:123123123123'}>
                                     <div className={styles.info}>
