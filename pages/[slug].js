@@ -74,12 +74,12 @@ export default class Profile extends React.Component {
                         <div className={styles.cardDown}>
                             <h2 className={styles.name} style={{ color: '#fff' }}>Next <span style={{color: '#E7405C'}}>A</span><span style={{color: '#f39939'}}>D</span><span style={{color: '#52c1ed'}}>V</span></h2>
                             <div className={styles.listSociety}>
-                                <a href={'tel:123123123123'}>
+                                <a href={'tel:+390640062033'}>
                                     <div className={styles.info}>
                                         <FaPhone size={'20px'}/>
                                     </div>
                                 </a>
-                                <a href={'mailto:a@a.com'}>
+                                <a href={'mailto:info@nextadv.it'}>
                                     <div className={styles.info}>
                                         <FaEnvelope size={'20px'} />
                                     </div>
