@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../component/Layout/Layout";
 import styles from '../styles/slug.module.css';
 import { FaDownload, FaEnvelope, FaGlobe, FaMapMarkerAlt, FaPhone, } from "react-icons/fa";
+import { ADMIN_BUSINESS_CARD } from "../lib/api";
+import { slugify } from "../lib/utils";
 
 
 
@@ -25,12 +27,13 @@ export default class Profile extends React.Component {
     async componentDidMount() {
         console.log(this.props.slug);
         try {
-            const response = await fetch('http://localhost:1337/profiles');
+            const response = await fetch(`${ADMIN_BUSINESS_CARD}/profiles`);
             console.log(response);
             if (response.status < 400) {
                 const json = await response.json();
+                const profile = (json || []).find(item => this.props.slug === slugify(item.name));
                 this.setState({
-                    profile: json.length ? json[0] : null
+                    profile: profile ? profile : null
                 })
             }
 
