@@ -46,7 +46,7 @@ export default class Profile extends React.Component {
                 {this.state.profile ? <div className={styles.wrapper}>
                     <div className={styles.card}>
                         <div className={styles.cardUp}>
-                            <img src="" alt="next" className={styles.logo} />
+                            <img src="https://www.nextadv.it/wp-content/uploads/2020/10/Next-ADV-Logo-Payoff-Blu.svg" alt="next" className={styles.logo} height="129"/>
                             <h1 className={styles.name}>
                                 {this.state.profile.name}
                             </h1>

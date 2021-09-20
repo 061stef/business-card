@@ -14,10 +14,11 @@
     z-index: 1;
     border-radius: inherit;
     padding: 0rem 0rem;
-    max-width: 100%;
+    max-width: 426px;
     width: 32rem;
     border-radius: inherit;
     animation: fadeIn 1s;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -49,19 +50,20 @@
     font-weight: 500;
     margin: 0.125rem 0;
     font-family: 'Raleway', sans-serif;
+    color: #3c4a9c;
 }
-.role{color: #003B49;
+.role{color: #3c4a9c;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 0.2rem;
     width: calc(100% + 0.2rem);
     font-size: 1.25em;
     line-height: 1.75;
     font-weight: 400; margin: 0.125rem 0;}
-    .hr{ width: 100%; max-width: 8rem; margin: 1rem auto 0; height: 3px; background-color: #003B49; }
+    .hr{ width: 100%; max-width: 8rem; margin: 1rem auto 0; height: 3px; background-color: #3c4a9c; }
     .list{ display: grid; grid-template-columns: 1fr 1fr 1fr; margin: 2rem auto 0px; max-width: 13rem; align-items: center; align-self: center; }
-    .box{ width: 40px; height: 40px; border-radius: 99px; background-color: #003B49; margin: 0 auto; color: #fff; display: flex; align-items: center; justify-content: center;}
+    .box{ width: 40px; height: 40px; border-radius: 99px; background-color: #3c4a9c; margin: 0 auto; color: #fff; display: flex; align-items: center; justify-content: center;}
 .cardDown{
-    background-color: #0c3b49;
+    background-color: #111532;
     padding: 2.75rem 0rem 1.75rem;
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
