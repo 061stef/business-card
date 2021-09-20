@@ -1,0 +1,59 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 1.75rem 1.75rem 1.75rem 1.75rem;
+}
+.card{
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+    padding: 0rem 0rem;
+    max-width: 100%;
+    width: 32rem;
+    border-radius: inherit;
+}
+.cardUp{
+    background-color: #fff;
+    padding: 3.75rem 0rem;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    text-align: center;
+}
+.logo{
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto 1rem;
+}
+.name{
+    letter-spacing: 0.2rem;
+    font-size: 1.625em;
+    line-height: 1.25;
+    font-weight: 500;
+    margin: 0.125rem 0;
+    font-family: 'Raleway', sans-serif;
+}
+.role{color: #003B49;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.2rem;
+    width: calc(100% + 0.2rem);
+    font-size: 1.25em;
+    line-height: 1.75;
+    font-weight: 400; margin: 0.125rem 0;}
+    .hr{ width: 100%; max-width: 20%; margin: 1rem auto 0; height: 3px; background-color: #003B49; }
+    .list{ display: grid; grid-template-columns: 1fr 1fr 1fr; margin: 2rem auto 0px; max-width: 40%; align-items: center; align-self: center; }
+    .box{ width: 40px; height: 40px; border-radius: 99px; background-color: #003B49; margin: 0 auto; color: #fff; display: flex; align-items: center; justify-content: center;}
+.cardDown{
+    background-color: #0c3b49;
+    padding: 2.75rem 0rem 1.75rem;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    text-align: center;
+}
+.listSociety{ display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; width: 100%; max-width: 50%; margin: 1rem auto;  }
+.info{ text-align: center; color: #fff; }
