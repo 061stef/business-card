@@ -7,6 +7,7 @@ import { slugify } from "../lib/utils";
 
 
 
+
 export async function getServerSideProps({ params }) {
     const slug = params.slug
     return {
@@ -22,6 +23,7 @@ export default class Profile extends React.Component {
         this.state = {
             profile: null
         }
+        this.generatevCard = this.generatevCard.bind(this);
     }
 
     async componentDidMount() {
@@ -39,13 +41,31 @@ export default class Profile extends React.Component {
             console.error(e);
         }
     }
+    async generatevCard() {
+        try {
+            const option = {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(this.state.profile)
+            }
+            const response = await fetch('/api/profiles', option);
+            const json = await response.json();
+            console.log(json);
+            //window.location.href = `./${slugify(this.state.profile.name)}.vcf`
+        } catch (err) {
+            console.error(err);
+        }
+    }
     render() {
+
         return (
             <Layout title={this.state.profile ? this.state.profile.name : ''} description={this.state.profile ? this.state.profile.role : ''}>
                 {this.state.profile ? <div className={styles.wrapper}>
                     <div className={styles.card}>
                         <div className={styles.cardUp}>
-                            <img src="https://www.nextadv.it/wp-content/uploads/2020/10/Next-ADV-Logo-Payoff-Blu.svg" alt="next" className={styles.logo} height="129"/>
+                            <img src="https://www.nextadv.it/wp-content/uploads/2020/10/Next-ADV-Logo-Payoff-Blu.svg" alt="next" className={styles.logo} height="129" />
                             <h1 className={styles.name}>
                                 {this.state.profile.name}
                             </h1>
@@ -60,7 +80,7 @@ export default class Profile extends React.Component {
                                     </div>
                                 </a>
                                 <a href={this.state.profile.link_drive}>
-                                    <div className={styles.box}>
+                                    <div className={styles.box} >
                                         <FaDownload size={'20px'} />
                                     </div>
                                 </a>
@@ -72,11 +92,11 @@ export default class Profile extends React.Component {
                             </div>
                         </div>
                         <div className={styles.cardDown}>
-                            <h2 className={styles.name} style={{ color: '#fff' }}>Next <span style={{color: '#E7405C'}}>A</span><span style={{color: '#f39939'}}>D</span><span style={{color: '#52c1ed'}}>V</span></h2>
+                            <h2 className={styles.name} style={{ color: '#fff' }}>Next <span style={{ color: '#E7405C' }}>A</span><span style={{ color: '#f39939' }}>D</span><span style={{ color: '#52c1ed' }}>V</span></h2>
                             <div className={styles.listSociety}>
                                 <a href={'tel:+390640062033'}>
                                     <div className={styles.info}>
-                                        <FaPhone size={'20px'}/>
+                                        <FaPhone size={'20px'} />
                                     </div>
                                 </a>
                                 <a href={'mailto:info@nextadv.it'}>
