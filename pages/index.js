@@ -7,6 +7,18 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { slugify } from '../lib/utils'
 
+export async function getServerSideProps({query}) {
+  console.log(query);
+  const amount = query.amount ? query.amount : null
+  const instalments = query.instalments ? query.instalments : null
+  return {
+    props:{
+      amount,
+      instalments
+    }
+  }
+}
+
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -33,15 +45,14 @@ export default class Home extends React.Component {
     return (
       <Layout >
         <div className={styles.containerBox}>
-          {(this.state.profiles || []).map(profile => (
-            <Link href={`/${slugify(profile.name)}`} passHref={true}>
+          {(this.state.profiles || []).map((profile, index) => (
+            <Link href={`/${slugify(profile.name)}`} passHref={true} key={index}>
               <a href="#">
                 <div className={styles.boxBusiness}>
                   {profile.name}
                 </div>
               </a>
             </Link>
-
           ))}
         </div>
       </Layout>

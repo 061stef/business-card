@@ -22,3 +22,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+#soisy-widget-custom span {
+  display: none !important;
+  }
