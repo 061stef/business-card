@@ -28,12 +28,12 @@ export default class Profile extends React.Component {
 
     async componentDidMount() {
         try {
-            const response = await fetch(`${ADMIN_BUSINESS_CARD}/profiles`);
+            const response = await fetch(`${ADMIN_BUSINESS_CARD}/profiles/${this.props.slug}`);
             if (response.status < 400) {
                 const json = await response.json();
-                const profile = (json || []).find(item => this.props.slug === slugify(item.name));
+                //const profile = (json || []).find(item => this.props.slug === slugify(item.name));
                 this.setState({
-                    profile: profile ? profile : null
+                    profile: json ? json : null
                 })
             }
 
@@ -50,7 +50,7 @@ export default class Profile extends React.Component {
                 },
                 body: JSON.stringify(this.state.profile)
             }
-            const response = await fetch('/api/profiles', option);
+            const response = await fetch('/api/gen-v-card', option);
             const json = await response.blob();
             const blob = new Blob([json], { type: "text/vcard;charset=utf-8" });
             const url = window.URL.createObjectURL(blob);

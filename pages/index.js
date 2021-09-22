@@ -46,7 +46,7 @@ export default class Home extends React.Component {
       <Layout >
         <div className={styles.containerBox}>
           {(this.state.profiles || []).map((profile, index) => (
-            <Link href={`/${slugify(profile.name)}`} passHref={true} key={index}>
+            <Link href={`/${profile.id}`} passHref={true} key={index}>
               <a href="#">
                 <div className={styles.boxBusiness}>
                   {profile.name}
