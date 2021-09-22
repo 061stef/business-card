@@ -15,10 +15,15 @@ export default async function (req, res) {
         //vCard.birthday = new Date(1985, 0, 1);
         vCard.title = 'Software Developer';
         //vCard.url = 'https://github.com/enesser';
+        
         //save to file
         vCard.saveToFile(`./${slugify(req.body.name)}.vcf`);
+
         //get as formatted string
-        return res.status(200).send(vCard);
+        res.setHeader('Content-disposition', `attachment; filename=${slugify(req.body.name)}.vcf`);
+        res.setHeader(`Content-Type`, `text/vcard; name=${slugify(req.body.name)}.vcf`);
+       
+        return res.status(200).send(vCard.getFormattedString());
     } catch (err) {
         console.error(err);
         return res.status(500).send(err)

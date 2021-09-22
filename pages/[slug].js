@@ -51,9 +51,10 @@ export default class Profile extends React.Component {
                 body: JSON.stringify(this.state.profile)
             }
             const response = await fetch('/api/profiles', option);
-            const json = await response.json();
-            console.log(json);
-            //window.location.href = `./${slugify(this.state.profile.name)}.vcf`
+            const json = await response.blob();
+            const blob = new Blob([json], { type: "text/vcard;charset=utf-8" });
+            const url = window.URL.createObjectURL(blob);
+            window.open(url)
         } catch (err) {
             console.error(err);
         }
@@ -79,11 +80,11 @@ export default class Profile extends React.Component {
                                         <FaPhone size={'20px'} />
                                     </div>
                                 </a>
-                                <a href={this.state.profile.link_drive}>
-                                    <div className={styles.box} >
-                                        <FaDownload size={'20px'} />
-                                    </div>
-                                </a>
+
+                                <div className={styles.box} onClick={this.generatevCard}>
+                                    <FaDownload size={'20px'} />
+                                </div>
+
                                 <a href={`mailto:${this.state.email}`}>
                                     <div className={styles.box}>
                                         <FaEnvelope size={'20px'} />
