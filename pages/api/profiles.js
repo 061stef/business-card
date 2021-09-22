@@ -17,7 +17,7 @@ export default async function (req, res) {
         //vCard.url = 'https://github.com/enesser';
         
         //save to file
-        vCard.saveToFile(`./${slugify(req.body.name)}.vcf`);
+        //vCard.saveToFile(`./${slugify(req.body.name)}.vcf`);
 
         //get as formatted string
         res.setHeader('Content-disposition', `attachment; filename=${slugify(req.body.name)}.vcf`);

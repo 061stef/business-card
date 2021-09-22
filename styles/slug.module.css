@@ -69,5 +69,5 @@
     border-bottom-right-radius: inherit;
     text-align: center;
 }
-.listSociety{ display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; width: 100%; max-width: 15rem; margin: 1rem auto;  }
+.listSociety{ display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; width: 100%; max-width: 15rem; margin: 1rem auto;  }
 .info{ text-align: center; color: #fff; }

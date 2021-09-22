@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../component/Layout/Layout";
 import styles from '../styles/slug.module.css';
-import { FaDownload, FaEnvelope, FaGlobe, FaMapMarkerAlt, FaPhone, } from "react-icons/fa";
+import { FaDownload, FaEnvelope, FaFilePowerpoint, FaGlobe, FaMapMarkerAlt, FaPhone, } from "react-icons/fa";
 import { ADMIN_BUSINESS_CARD } from "../lib/api";
 import { slugify } from "../lib/utils";
 
@@ -54,9 +54,13 @@ export default class Profile extends React.Component {
             const json = await response.blob();
             const blob = new Blob([json], { type: "text/vcard;charset=utf-8" });
             const url = window.URL.createObjectURL(blob);
-            window.open(url)
+            window.open(url);
+
         } catch (err) {
+
             console.error(err);
+            return;
+
         }
     }
     render() {
@@ -113,6 +117,11 @@ export default class Profile extends React.Component {
                                 <a href="https://www.google.com/maps/place/Via+dei+Granai+di+Nerva,+48,+00142+Roma+RM/data=!4m2!3m1!1s0x13258a49d828da85:0x352a0991b27c0acb?sa=X&ved=2ahUKEwiRi_yypI3zAhVB3KQKHX_rAdkQ8gF6BAgLEAE" target="_blank" >
                                     <div className={styles.info}>
                                         <FaMapMarkerAlt size={'20px'} />
+                                    </div>
+                                </a>
+                                <a href="https://www.google.com/maps/place/Via+dei+Granai+di+Nerva,+48,+00142+Roma+RM/data=!4m2!3m1!1s0x13258a49d828da85:0x352a0991b27c0acb?sa=X&ved=2ahUKEwiRi_yypI3zAhVB3KQKHX_rAdkQ8gF6BAgLEAE" target="_blank" >
+                                    <div className={styles.info}>
+                                        <FaFilePowerpoint size={'20px'} />
                                     </div>
                                 </a>
 
