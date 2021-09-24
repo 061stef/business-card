@@ -1,10 +1,10 @@
 {
     "appName": "next-business-card",
     "imageName": "next-business-card",
-    "clientTag": "next",
+    "clientTag": "nextadv",
     "registries": {
         "registry_dev": "0.0.0.0:5000",
-        "registry_stage": "live-registry.nxtcloud.cloud",
+        "registry_stage": "live-registry.nxtcloud.it",
         "registry_live": "live-registry.nxtcloud.it"
     }
 }
