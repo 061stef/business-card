@@ -119,7 +119,7 @@ export default class Profile extends React.Component {
                                         <FaMapMarkerAlt size={'20px'} />
                                     </div>
                                 </a>
-                                <a href="https://www.google.com/maps/place/Via+dei+Granai+di+Nerva,+48,+00142+Roma+RM/data=!4m2!3m1!1s0x13258a49d828da85:0x352a0991b27c0acb?sa=X&ved=2ahUKEwiRi_yypI3zAhVB3KQKHX_rAdkQ8gF6BAgLEAE" target="_blank" >
+                                <a href="https://drive.google.com/file/d/10K5-qXUNfrue9glRuIUmPdfjUsKp8Qak/view" target="_blank" >
                                     <div className={styles.info}>
                                         <FaFilePowerpoint size={'20px'} />
                                     </div>
