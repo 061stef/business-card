@@ -12,7 +12,7 @@ export default async function (req, res) {
         //vCard.photo.attachFromUrl('https://avatars2.githubusercontent.com/u/5659221?v=3&s=460', 'JPEG');
         vCard.workPhone = req.body.phone;
         vCard.email = req.body.email
-        //vCard.workEmail = req.body.email
+        vCard.workEmail = req.body.email
         //vCard.birthday = new Date(1985, 0, 1);
         vCard.title = 'Software Developer';
         //vCard.url = 'https://github.com/enesser';
